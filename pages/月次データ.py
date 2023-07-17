@@ -110,9 +110,9 @@ with st.form(key='monthly_sales_comment'):
     comment = st.text_input("コメントを記入してください")
     submit_btn = st.form_submit_button("登録")
     if submit_btn: #ボタンをクリックしたらコメントを登録する。
-        with open(".//data/sales_data/sales_kind_comment.txt","a") as f:
+        with open(".//data/sales_data/sales_kind_comment.txt","a",encoding='uft-8') as f:
             f.write(f"{comment}")
-    with open(".//data/sales_data/sales_kind_comment.txt","r") as f:
+    with open(".//data/sales_data/sales_kind_comment.txt","r",encoding='uft-8') as f:
         sales_comment = f.read()
         sales_comment
 st.markdown(":red[今回は練習用にデータベースの代わりにtxtファイルを使用しています]")
